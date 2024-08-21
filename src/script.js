@@ -1,17 +1,28 @@
+// /src/script.js
+
 function appendToDisplay(value) {
-    document.getElementById('display').value += value;
+    const display = document.getElementById('display');
+    display.value += value;
   }
   
   function clearDisplay() {
-    document.getElementById('display').value = '';
+    const display = document.getElementById('display');
+    display.value = '';
   }
   
   function calculate() {
     const display = document.getElementById('display');
     try {
-      display.value = eval(display.value);
+      const result = eval(display.value); // eval es inseguro, solo para pruebas simples
+      if (Number.isFinite(result)) {
+        display.value = result;
+      } else {
+        display.value = 'Error';
+      }
     } catch {
       display.value = 'Error';
     }
   }
+  
+  module.exports = { appendToDisplay, clearDisplay, calculate };
   

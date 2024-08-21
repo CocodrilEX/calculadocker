@@ -1,0 +1,20 @@
+{
+    "name": "calculator-web",
+    "version": "1.0.0",
+    "description": "A simple web-based calculator",
+    "main": "src/script.js",
+    "scripts": {
+        "test": "jest",
+        "start": "node src/script.js"
+    },
+    "devDependencies": {
+        "jest": "^29.0.0",
+        "jest-environment-jsdom": "^29.7.0"
+    },
+    "jest": {
+        "testEnvironment": "jsdom",
+        "verbose": true
+    },
+    "author": "",
+    "license": "ISC"
+}
